@@ -41,12 +41,6 @@ class CYKGenerator{
                 $tableFill[$i][$j] = []; //  himpunan kosong
                 for($h=$i; $h <= $j-1; $h++ ){
 
-                    // kombinasi RHS baru
-                    // $new_rhs = [];
-                    // if(!empty($tableFill[$i][$h]) && !empty($tableFill[$h+1][$j])){
-                    //     $new_rhs = combine($tableFill[$i][$h], $tableFill[$h+1][$j]);
-                    // }
-
                     $new_rhs = combine($tableFill[$i][$h], $tableFill[$h+1][$j]);
 
                     // perulangan untuk setiap kombinasi RHS baru, cek apakah memiliki terminal

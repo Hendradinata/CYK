@@ -13,10 +13,10 @@ if (isset($_POST['submit'])) {
         $cyk = $cyk->solve();
 
         if ($cyk->validation()) {
-            $message =  "The sentence is valid";
+            $message =  "Kalimat Bahasa Bali Yang Diinputkan Merupakan Kalimat Yang Valid";
             $color = "blueT";
         } else {
-            $message = "Invalid sentence";
+            $message = "Kalimat Bahasa Bali Yang Diinputkan Merupakan Kalimat Yang Tidak Valid";
             $color = "redT";
         }
     }
@@ -35,26 +35,44 @@ if (isset($_POST['submit'])) {
 
 <body>
     <div class="container">
-        <div class="section1">
-            <h2>Teori Bahasa Dan Otomata</h2>
-            <h2>Cocke–Younger–Kasami Algorithm</h2>
-            <div class="form">
-                <form action="./index.php" method="POST">
-                    <label for="sentence">Kalimat : </label>
-                    <input type="text" id="sentence" name="stcInput" value="<?php if (isset($sentence)) echo $sentence; ?>">
-
-                    <button type="submit" name="submit" class="mybtn red">submit</button>
-                </form>
+        <div class="center">
+            <!-- Judul -->
+            <div class="row mt-3">
+                <div class="form-group"></div>
+                <h1 style="text-align: center">Teori Bahasa Dan Otomata</h1>
+                <h2 style="text-align: center">Validasi Kalimat Bahasa Bali Menggunakan Algoritma Cocke–Younger–Kasami Algorithm</h2>
+                <h4 style="text-align: left">Tata Cara Penggunaan</h4>
+                <div>
+                    <oL type="1" style="text-align: left">
+                        <li>Masukan kalimat bahasa bali pada text field.</li>
+                        <li>Tekan tombol submit untuk mengecek apakah kalimat bahasa bali tersebut valid atau tidak.</li>
+                        <li>Setelah ditekan tombol submit, akan ditampilkan tulisan kalimat bahsa bali tersebut valid atau tidak valid.</li>
+                        <li>Jika ingin memvalidasi kalimat lagi, hapus kalimat bahsa bali pada text field. Dan lakukan langkah-langkah dari awal.</li>
+                    </ol>
+                </div>
+            </div>
+            <hr size="10" style="background-color:rgb(5, 5, 5)">
+            <!--  -->
+            <div class="section1">
+                <h2 style="text-align: center">Masukan Kalimat</h2>
+                <div class="form">
+                    <form action="./index.php" method="POST">
+                        <label for="sentence">Kalimat : </label>
+                        <input type="text" id="sentence" name="stcInput" value="<?php if (isset($sentence)) echo $sentence; ?>">
+                        <button type="submit" name="submit" class="mybtn white">submit</button>
+                    </form>
+                </div>
             </div>
         </div>
-        <hr class="line">
+        <hr size="10" style="background-color:rgb(0, 0, 0)">
         <div class="section2">
+            <h2 style="text-align: center">Hasil Validasi Kalimat:</h2>
             <?php if (isset($sentence)) : ?>
-                <h2 class="<?php echo $color; ?>"><?php echo $message; ?>.</h2>
+                <h2 style="text-align: center" class="<?php echo $color; ?>"><?php echo $message; ?>.</h2>
             <?php endif; ?>
+            <br>
         </div>
     </div>
-
 </body>
 
 </html>
